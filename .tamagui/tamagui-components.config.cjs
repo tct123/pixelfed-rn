@@ -4194,7 +4194,7 @@ var init_tslib_es6 = __esm({
     __name(__metadata, "__metadata");
     __name(__awaiter, "__awaiter");
     __name(__generator, "__generator");
-    __createBinding = Object.create ? function(o, m, k, k2) {
+    __createBinding = Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       var desc = Object.getOwnPropertyDescriptor(m, k);
       if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -4203,10 +4203,10 @@ var init_tslib_es6 = __esm({
         }, "get") };
       }
       Object.defineProperty(o, k2, desc);
-    } : function(o, m, k, k2) {
+    }) : (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       o[k2] = m[k];
-    };
+    });
     __name(__exportStar, "__exportStar");
     __name(__values, "__values");
     __name(__read, "__read");
@@ -4218,9 +4218,9 @@ var init_tslib_es6 = __esm({
     __name(__asyncDelegator, "__asyncDelegator");
     __name(__asyncValues, "__asyncValues");
     __name(__makeTemplateObject, "__makeTemplateObject");
-    __setModuleDefault = Object.create ? function(o, v) {
+    __setModuleDefault = Object.create ? (function(o, v) {
       Object.defineProperty(o, "default", { enumerable: true, value: v });
-    } : function(o, v) {
+    }) : function(o, v) {
       o["default"] = v;
     };
     ownKeys = /* @__PURE__ */ __name(function(o) {
@@ -16147,7 +16147,7 @@ var require_NativeAnimatedHelper = __commonJS({
     var flushQueueTimeout = null;
     var eventListenerGetValueCallbacks = {};
     var eventListenerAnimationFinishedCallbacks = {};
-    var nativeOps = useSingleOpBatching ? function() {
+    var nativeOps = useSingleOpBatching ? (function() {
       var apis = [
         "createAnimatedNode",
         // 1
@@ -16196,7 +16196,7 @@ var require_NativeAnimatedHelper = __commonJS({
         acc[functionName] = i + 1;
         return acc;
       }, {});
-    }() : NativeAnimatedModule;
+    })() : NativeAnimatedModule;
     var API = exports2.API = {
       getValue: /* @__PURE__ */ __name(function getValue(tag, saveValueCallback) {
         (0, _invariant.default)(nativeOps, "Native animated module is not available");
@@ -24705,12 +24705,12 @@ var require_SafeAreaView = __commonJS({
     var _View = _interopRequireDefault(require_View());
     var _canUseDom = _interopRequireDefault(require_canUseDom());
     var _excluded = ["style"];
-    var cssFunction = function() {
+    var cssFunction = (function() {
       if (_canUseDom.default && window.CSS && window.CSS.supports && window.CSS.supports("top: constant(safe-area-inset-top)")) {
         return "constant";
       }
       return "env";
-    }();
+    })();
     var SafeAreaView = /* @__PURE__ */ React83.forwardRef((props, ref) => {
       var style = props.style, rest = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
       return /* @__PURE__ */ React83.createElement(_View.default, (0, _extends2.default)({}, rest, {
@@ -24828,7 +24828,7 @@ var require_Switch = __commonJS({
       var minWidth = (0, _multiplyStyleLengthValue.default)(height, 2);
       var width = styleWidth > minWidth ? styleWidth : minWidth;
       var trackBorderRadius = (0, _multiplyStyleLengthValue.default)(height, 0.5);
-      var trackCurrentColor = function() {
+      var trackCurrentColor = (function() {
         if (value === true) {
           if (trackColor != null && typeof trackColor === "object") {
             return trackColor.true;
@@ -24842,7 +24842,7 @@ var require_Switch = __commonJS({
             return trackColor !== null && trackColor !== void 0 ? trackColor : defaultTrackColor;
           }
         }
-      }();
+      })();
       var thumbCurrentColor = value ? activeThumbColor !== null && activeThumbColor !== void 0 ? activeThumbColor : defaultActiveThumbColor : thumbColor !== null && thumbColor !== void 0 ? thumbColor : defaultThumbColor;
       var thumbHeight = height;
       var thumbWidth = thumbHeight;
@@ -24850,7 +24850,7 @@ var require_Switch = __commonJS({
         height,
         width
       }];
-      var disabledTrackColor = function() {
+      var disabledTrackColor = (function() {
         if (value === true) {
           if (typeof activeTrackColor === "string" && activeTrackColor != null || typeof trackColor === "object" && trackColor != null && trackColor.true) {
             return trackCurrentColor;
@@ -24864,8 +24864,8 @@ var require_Switch = __commonJS({
             return defaultDisabledTrackColor;
           }
         }
-      }();
-      var disabledThumbColor = function() {
+      })();
+      var disabledThumbColor = (function() {
         if (value === true) {
           if (activeThumbColor == null) {
             return defaultDisabledThumbColor;
@@ -24879,7 +24879,7 @@ var require_Switch = __commonJS({
             return thumbCurrentColor;
           }
         }
-      }();
+      })();
       var trackStyle = [styles.track, {
         backgroundColor: disabled ? disabledTrackColor : trackCurrentColor,
         borderRadius: trackBorderRadius
